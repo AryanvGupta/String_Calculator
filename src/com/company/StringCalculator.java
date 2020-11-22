@@ -52,7 +52,7 @@ public class StringCalculator extends Exception {
 //        int num = Integer.parseInt(numbers.replaceAll(",",""));
 
         for (int i=0; i<numbers.length(); i++) {
-            if (numbers.charAt(i) != ','){
+            if ((int)numbers.charAt(i) >= 48 && (int)numbers.charAt(i) <= 57){
 //                System.out.println("char: " + numbers.charAt(i));
 
                 integerList1.add(Integer.parseInt(String.valueOf(numbers.charAt(i))));
