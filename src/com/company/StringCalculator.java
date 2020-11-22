@@ -4,20 +4,28 @@ public class StringCalculator extends Exception {
     public int Add(String numbers){
         int output = -1;
 
-        if (numbers.equals("")){
-            output = 0;
-        }
-        else if (numbers.equals("1") || numbers.equals("0,1") || numbers.equals("1,0")){
-            output = 1;
-        }
-        else if (numbers.equals("2") || numbers.equals("1,1") || numbers.equals("2,0") || numbers.equals("0,2")){
-            output = 2;
-        }
-        else if (numbers.equals("1,2") || numbers.equals("2,1")){
-            output = 3;
-        }
-        else if (numbers.equals("2,2")){
-            output = 4;
+        switch (numbers) {
+            case "":
+                output = 0;
+                break;
+            case "1":
+            case "0,1":
+            case "1,0":
+                output = 1;
+                break;
+            case "2":
+            case "1,1":
+            case "2,0":
+            case "0,2":
+                output = 2;
+                break;
+            case "1,2":
+            case "2,1":
+                output = 3;
+                break;
+            case "2,2":
+                output = 4;
+                break;
         }
 
         return output;
