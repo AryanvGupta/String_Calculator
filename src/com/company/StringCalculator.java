@@ -11,14 +11,14 @@ public class StringCalculator extends Exception {
 
 //        System.out.println(inputNum);
 
-        if (numbers.equals(""))
-            return output;
+        if (numbers.equals("")) {
+        }
         else {
             for (int i=0; i<inputNum.size(); i++){
                 output += (int) inputNum.get(i);
             }
-            return output;
         }
+        return output;
 
 
 //        switch (numbers) {
