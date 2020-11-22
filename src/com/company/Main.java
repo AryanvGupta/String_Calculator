@@ -7,11 +7,9 @@ public class Main {
 
         System.out.println(stringCalculator.Add(""));
         System.out.println(stringCalculator.Add("1"));
-        System.out.println(stringCalculator.Add("2"));
-        System.out.println(stringCalculator.Add("1\n3,2"));
         System.out.println(stringCalculator.Add("2,1"));
-        System.out.println(stringCalculator.Add("2,2"));
-        System.out.println(stringCalculator.Add("0,2"));
-        System.out.println(stringCalculator.Add("1,0"));
+        System.out.println(stringCalculator.Add("1\n3,2"));
+        System.out.println(stringCalculator.Add("//;\\n1;2"));
+
     }
 }
