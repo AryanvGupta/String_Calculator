@@ -7,17 +7,21 @@ public class StringCalculator extends Exception {
 
     public int Add(String numbers){
         int output = 0;
-        List inputNum = StrToInt(numbers);
+        List<Integer> inputNum = StrToInt(numbers);
 
 //        System.out.println(inputNum);
 
-        if (numbers.equals("")) {
-        }
-        else {
-            for (int i=0; i<inputNum.size(); i++){
-                output += (int) inputNum.get(i);
+        if (!numbers.equals("")){
+            if (numbers.contains("-")){
+                output = -1;
+            }
+            else {
+                for (Integer o : inputNum) {
+                    output += o;
+                }
             }
         }
+
         return output;
 
 
@@ -47,7 +51,21 @@ public class StringCalculator extends Exception {
 
     }
 
-    public static List StrToInt(String numbers){
+    public List<String> NegativeException(String numbers){
+        List<String> negNum = new ArrayList<>();
+        String str;
+
+        for (int i=0; i<numbers.length(); i++){
+            if (String.valueOf(numbers.charAt(i)).equals("-")){
+                str = "-" + numbers.charAt(i + 1);
+                negNum.add(str);
+            }
+        }
+//        System.out.println(negNum);
+        return negNum;
+    }
+
+    public List<Integer> StrToInt(String numbers){
         List<Integer> integerList1 = new ArrayList<>();
 //        int num = Integer.parseInt(numbers.replaceAll(",",""));
 
