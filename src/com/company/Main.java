@@ -6,8 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         StringCalculator stringCalculator = new StringCalculator();
-        String input = "-1,5,-6,6\n654";
-
+        String input = "1,-4,2";
 
         int result = stringCalculator.Add(input);
 
@@ -18,6 +17,10 @@ public class Main {
                 System.out.println("negatives not allowed: " + negNum.get(i));
             }
         }
+        else {
+            System.out.println(result);
+        }
+        System.out.println("No. of times Add() was called: " + stringCalculator.GetCalledCount());
 
 //        System.out.println(stringCalculator.Add(""));
 //        System.out.println(stringCalculator.Add("1"));

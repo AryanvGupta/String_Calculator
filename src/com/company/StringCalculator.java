@@ -5,6 +5,8 @@ import java.util.List;
 
 public class StringCalculator extends Exception {
 
+    int count = 0;
+
     public int Add(String numbers){
         int output = 0;
         List<Integer> inputNum = StrToInt(numbers);
@@ -21,7 +23,7 @@ public class StringCalculator extends Exception {
                 }
             }
         }
-
+        count++;
         return output;
 
 
@@ -49,6 +51,10 @@ public class StringCalculator extends Exception {
 //                break;
 //        }
 
+    }
+
+    public int GetCalledCount(){
+        return count;
     }
 
     public List<String> NegativeException(String numbers){
