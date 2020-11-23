@@ -1,12 +1,13 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         StringCalculator stringCalculator = new StringCalculator();
-        String input = "1,-4,2";
+        String input = "1;1400;2";
 
         int result = stringCalculator.Add(input);
 

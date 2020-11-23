@@ -19,7 +19,8 @@ public class StringCalculator extends Exception {
             }
             else {
                 for (Integer o : inputNum) {
-                    output += o;
+                    if (o < 1001)
+                        output += o;
                 }
             }
         }
@@ -50,7 +51,6 @@ public class StringCalculator extends Exception {
 //                output = 4;
 //                break;
 //        }
-
     }
 
     public int GetCalledCount(){
@@ -75,15 +75,22 @@ public class StringCalculator extends Exception {
         List<Integer> integerList1 = new ArrayList<>();
 //        int num = Integer.parseInt(numbers.replaceAll(",",""));
 
-        for (int i=0; i<numbers.length(); i++) {
-            if ((int)numbers.charAt(i) >= 48 && (int)numbers.charAt(i) <= 57){
-//                System.out.println("char: " + numbers.charAt(i));
+        String[] inpArray = numbers.split(";");
 
-                integerList1.add(Integer.parseInt(String.valueOf(numbers.charAt(i))));
+//        for (int i=0; i<numbers.length(); i++) {
+//            if ((int)numbers.charAt(i) >= 48 && (int)numbers.charAt(i) <= 57){
+////                System.out.println("char: " + numbers.charAt(i));
+//
+//                integerList1.add(Integer.parseInt(String.valueOf(numbers.charAt(i))));
+//
+////                System.out.println("func list: " + integerList1);
+//            }
+//        }
 
-//                System.out.println("func list: " + integerList1);
-            }
+        for (int i=0; i<inpArray.length; i++){
+            integerList1.add(Integer.parseInt(inpArray[i]));
         }
+
         return integerList1;
     }
 
