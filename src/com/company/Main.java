@@ -39,7 +39,7 @@ public class Main {
                 System.out.println(result);
             }
         }
+        System.out.println("\n");
         System.out.println("No. of times Add() was called: " + stringCalculator.GetCalledCount()); // to see how many times Add() function is called
-
     }
 }

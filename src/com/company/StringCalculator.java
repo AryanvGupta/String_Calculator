@@ -53,13 +53,14 @@ public class StringCalculator extends Exception {
     public List<Integer> StrToInt(String numbers){
         List<Integer> integerList1 = new ArrayList<>();
 
-        String[] inpArray = numbers.split("[;*,\\[\\]\n%]+");
+        String[] inpArray = numbers.split("[\n;*,\\[\\]\\\n\\%]+");
 
         for (int i=0; i<inpArray.length; i++){
+            if (inpArray[i].equals(""))
+                inpArray[i] = "0";
             int temp = Integer.parseInt(inpArray[i]);
             integerList1.add(temp);
         }
         return integerList1;
     }
-
 }
