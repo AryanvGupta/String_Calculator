@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class StringCalculator extends Exception {
@@ -53,14 +54,32 @@ public class StringCalculator extends Exception {
     public List<Integer> StrToInt(String numbers){
         List<Integer> integerList1 = new ArrayList<>();
 
-        String[] inpArray = numbers.split("[\n;!@#$^&_|:<>?.+~`*,^/()'\\[\\]\\\n\\%]+");
+        String[] inpArray = numbers.split("[//,;\n\\\n\\\\n\\[\\]\\\\]+");
+        System.out.println("inpArray: " + Arrays.toString(inpArray));
 
-        for (int i=0; i<inpArray.length; i++){
-            if (inpArray[i].equals(""))
-                inpArray[i] = "0";
-            int temp = Integer.parseInt(inpArray[i]);
+        String pattern = "";
+        for (int i=1; i<inpArray.length-1; i++){
+            pattern = pattern + "" + inpArray[i];
+        }
+        pattern = "[" + pattern + "]+";
+        System.out.println("pattern: " + pattern);
+
+        String[] intArray = new String[inpArray.length];
+        if (pattern.equals("[]+"))
+            intArray[0] = "0";
+        else
+            intArray = inpArray[inpArray.length-1].split(pattern);
+
+        if (!inpArray[0].equals(""))
+            intArray = inpArray;
+
+        System.out.println(Arrays.toString(intArray));
+
+        for (int i=0; i<intArray.length; i++){
+            int temp = Integer.parseInt(intArray[i]);
             integerList1.add(temp);
         }
+        System.out.println("intList1: " + integerList1);
         return integerList1;
     }
 }
