@@ -75,7 +75,7 @@ public class StringCalculator extends Exception {
         List<Integer> integerList1 = new ArrayList<>();
 //        int num = Integer.parseInt(numbers.replaceAll(",",""));
 
-        String[] inpArray = numbers.split(";");
+        String[] inpArray = numbers.split("[;*,\\[\\]\n%]+");
 
 //        for (int i=0; i<numbers.length(); i++) {
 //            if ((int)numbers.charAt(i) >= 48 && (int)numbers.charAt(i) <= 57){
@@ -88,9 +88,9 @@ public class StringCalculator extends Exception {
 //        }
 
         for (int i=0; i<inpArray.length; i++){
-            integerList1.add(Integer.parseInt(inpArray[i]));
+            int temp = Integer.parseInt(inpArray[i]);
+            integerList1.add(temp);
         }
-
         return integerList1;
     }
 

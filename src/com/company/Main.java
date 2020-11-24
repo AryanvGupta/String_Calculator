@@ -2,12 +2,30 @@ package com.company;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         StringCalculator stringCalculator = new StringCalculator();
-        String input = "1;1400;2";
+
+//        System.out.println("Enter the number of inputs: ");
+//        int n = scanner.nextInt();
+
+//        String[] inputArray = new String[n];
+        String input = "2;%53[*]\n4";
+
+//        for (int i=0; i<n;i ++){
+//            input = scanner.nextLine();
+//            inputArray[i] = input;
+//        }
+//
+//        for (int i=0; i<n; i++){
+//
+//        }
+
 
         int result = stringCalculator.Add(input);
 
