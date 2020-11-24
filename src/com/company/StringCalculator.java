@@ -75,8 +75,8 @@ public class StringCalculator extends Exception {
 
         System.out.println(Arrays.toString(intArray));
 
-        for (int i=0; i<intArray.length; i++){
-            int temp = Integer.parseInt(intArray[i]);
+        for (String s : intArray) {
+            int temp = Integer.parseInt(s);
             integerList1.add(temp);
         }
         System.out.println("intList1: " + integerList1);
