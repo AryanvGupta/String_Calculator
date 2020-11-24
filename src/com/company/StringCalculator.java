@@ -54,15 +54,14 @@ public class StringCalculator extends Exception {
     public List<Integer> StrToInt(String numbers){
         List<Integer> integerList1 = new ArrayList<>();
 
-        String[] inpArray = numbers.split("[//,;\n\\\n\\\\n\\[\\]\\\\]+");
-        System.out.println("inpArray: " + Arrays.toString(inpArray));
+        String[] inpArray = numbers.split("[//,\n\\\n\\\\n\\[\\]\\\\]+");
 
         String pattern = "";
         for (int i=1; i<inpArray.length-1; i++){
             pattern = pattern + "" + inpArray[i];
         }
         pattern = "[" + pattern + "]+";
-        System.out.println("pattern: " + pattern);
+
 
         String[] intArray = new String[inpArray.length];
         if (pattern.equals("[]+"))
@@ -73,13 +72,12 @@ public class StringCalculator extends Exception {
         if (!inpArray[0].equals(""))
             intArray = inpArray;
 
-        System.out.println(Arrays.toString(intArray));
 
         for (String s : intArray) {
             int temp = Integer.parseInt(s);
             integerList1.add(temp);
         }
-        System.out.println("intList1: " + integerList1);
+
         return integerList1;
     }
 }
