@@ -7,12 +7,14 @@ public class StringCalculator extends Exception {
 
     int count = 0;
 
+    // Function to calculate the output
     public int Add(String numbers){
         int output = 0;
-        List<Integer> inputNum = StrToInt(numbers);
+        List<Integer> inputNum = StrToInt(numbers); // List to store the converted String numbers to Integers
 
 //        System.out.println(inputNum);
 
+        // To check and the return the appropriate value
         if (!numbers.equals("")){
             if (numbers.contains("-")){
                 output = -1;
@@ -26,37 +28,14 @@ public class StringCalculator extends Exception {
         }
         count++;
         return output;
-
-
-//        switch (numbers) {
-//            case "":
-//                output = 0;
-//                break;
-//            case "1":
-//            case "0,1":
-//            case "1,0":
-//                output = 1;
-//                break;
-//            case "2":
-//            case "1,1":
-//            case "2,0":
-//            case "0,2":
-//                output = 2;
-//                break;
-//            case "1,2":
-//            case "2,1":
-//                output = 3;
-//                break;
-//            case "2,2":
-//                output = 4;
-//                break;
-//        }
     }
 
+    // Function to return how many times Add was called.
     public int GetCalledCount(){
         return count;
     }
 
+    // Function to throw exception when negative numbers are entered
     public List<String> NegativeException(String numbers){
         List<String> negNum = new ArrayList<>();
         String str;
@@ -67,25 +46,14 @@ public class StringCalculator extends Exception {
                 negNum.add(str);
             }
         }
-//        System.out.println(negNum);
         return negNum;
     }
 
+    // Function to convert the String inputs to Integers
     public List<Integer> StrToInt(String numbers){
         List<Integer> integerList1 = new ArrayList<>();
-//        int num = Integer.parseInt(numbers.replaceAll(",",""));
 
         String[] inpArray = numbers.split("[;*,\\[\\]\n%]+");
-
-//        for (int i=0; i<numbers.length(); i++) {
-//            if ((int)numbers.charAt(i) >= 48 && (int)numbers.charAt(i) <= 57){
-////                System.out.println("char: " + numbers.charAt(i));
-//
-//                integerList1.add(Integer.parseInt(String.valueOf(numbers.charAt(i))));
-//
-////                System.out.println("func list: " + integerList1);
-//            }
-//        }
 
         for (int i=0; i<inpArray.length; i++){
             int temp = Integer.parseInt(inpArray[i]);

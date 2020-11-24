@@ -11,35 +11,37 @@ public class Main {
     public static void main(String[] args) {
         StringCalculator stringCalculator = new StringCalculator();
 
-//        System.out.println("Enter the number of inputs: ");
-//        int n = scanner.nextInt();
+        System.out.println("Enter the number of inputs: ");
+        int n = scanner.nextInt(); // specify the number of inputs
+        scanner.nextLine();
 
-//        String[] inputArray = new String[n];
-        String input = "2;%53[*]\n4";
+        String[] inputArray = new String[n]; // to store various inputs
+        String input; // variable for input
+        int result; // variable for result
 
-//        for (int i=0; i<n;i ++){
-//            input = scanner.nextLine();
-//            inputArray[i] = input;
-//        }
-//
-//        for (int i=0; i<n; i++){
-//
-//        }
+        System.out.println("Enter " + n + " inputs: ");
+        // loop to store input in array
+        for (int i=0; i<n; i++){
+            input = scanner.nextLine();
+            inputArray[i] = input;
+        }
 
+        // loop to provide the desired output for the given inputs
+        for (int i=0; i<n; i++){
+            result = stringCalculator.Add(inputArray[i]); // checks the output
+            if (result == -1){
+                List negNum = stringCalculator.NegativeException(inputArray[i]); // for invalid/negative inputs
 
-        int result = stringCalculator.Add(input);
-
-        if (result == -1){
-            List negNum = stringCalculator.NegativeException(input);
-
-            for (int i=0;i<negNum.size();i++){
-                System.out.println("negatives not allowed: " + negNum.get(i));
+                for (Object o : negNum) {
+                    System.out.println("negatives not allowed: " + o);
+                }
+            }
+            else {
+                System.out.println(result);
             }
         }
-        else {
-            System.out.println(result);
-        }
-        System.out.println("No. of times Add() was called: " + stringCalculator.GetCalledCount());
+        System.out.println("No. of times Add() was called: " + stringCalculator.GetCalledCount()); // to see how many times Add() function is called
+
 
 //        System.out.println(stringCalculator.Add(""));
 //        System.out.println(stringCalculator.Add("1"));
